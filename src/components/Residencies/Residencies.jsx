@@ -1,8 +1,9 @@
-import React from 'react'
-import { Swiper, SwiperSlide, useSwiper } from 'swiper/react'
-import "swiper/css"
-import './Residencies.css'
-import data from '../../utils/slider.json'
+import React from 'react';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import "swiper/css";
+import './Residencies.css';
+import data from '../../utils/slider.json';
+import { sliderSettings } from '../../utils/common';
 
 
 const Residencies = () => {
@@ -14,7 +15,7 @@ const Residencies = () => {
                     <span className="primaryText">Popular Residencies</span>
                 </div>
 
-                <Swiper>
+                <Swiper {...sliderSettings}>
                     {
                         data.map((card, i) => (
                             <SwiperSlide key={i}>
@@ -26,7 +27,7 @@ const Residencies = () => {
                                     </span>
 
                                     <span className="primaryText">{card.name}</span>
-                                    <span className="primaryText">{card.detail}</span>
+                                    <span className="secondaryText">{card.detail}</span>
 
                                 </div>
                             </SwiperSlide>
